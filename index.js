@@ -22,7 +22,7 @@ ws.on('message', (data) => {
     if (messageType === "user:redeemed") {
         console.log("user redeemed", receivedData);
         //spaw reece serve
-        let process = spawn('python', ['smartvent-kyc.py']);
+        let process = spawn('python', ['smartvend-kyc.py']);
 
 
         process.stdout.on('data', function (chunk) {
