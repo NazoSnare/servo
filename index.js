@@ -3,7 +3,7 @@ const path = require('path');
 const util = require("util");
 const { spawn } = require('child_process')
 
-const ws = new WebSocket("ws://10.112.20.171:8080");
+const ws = new WebSocket("ws://10.112.20.171:8082");
 
 ws.on('open', function open() {
     ws.send(JSON.stringify({
