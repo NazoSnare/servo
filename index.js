@@ -3,7 +3,7 @@ const path = require('path');
 const util = require("util");
 const { spawn } = require('child_process')
 
-const ws = new WebSocket("ws://10.112.20.171:8082");
+const ws = new WebSocket("ws://10.112.20.181:3000");
 
 ws.on('open', function open() {
     ws.send(JSON.stringify({
@@ -22,7 +22,7 @@ ws.on('message', (data) => {
     if (messageType === "user:redeemed") {
         console.log("user redeemed", receivedData);
         //spaw reece serve
-        let process = spawn('python', ['smartvend-kyc.py']);
+        let process = spawn('python', ['smartvend-kyc.py',receivedData.reece]);
 
 
         process.stdout.on('data', function (chunk) {
