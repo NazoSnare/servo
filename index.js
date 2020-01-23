@@ -3,7 +3,7 @@ const path = require('path');
 const util = require("util");
 const { spawn } = require('child_process')
 
-const ws = new WebSocket("ws://ec2-54-89-128-43.compute-1.amazonaws.com:3000");
+const ws = new WebSocket("ws://ec2-54-91-147-141.compute-1.amazonaws.com:3000");
 
 ws.on('open', function open() {
     ws.send(JSON.stringify({
@@ -41,6 +41,26 @@ ws.on('message', (data) => {
             }
 
             case "Sprite": {
+                productSlot = "4";
+                break;
+            }
+
+            case "1": {
+                productSlot = "1";
+                break;
+            }
+
+            case "2": {
+                productSlot = "2";
+                break;
+            }
+
+            case "3": {
+                productSlot = "3";
+                break;
+            }
+
+            case "4": {
                 productSlot = "4";
                 break;
             }
